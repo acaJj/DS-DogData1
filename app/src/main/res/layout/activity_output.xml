@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="dogData"
+            type="sheridan.jaca.dogdata1.model.DogData" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        tools:context=".InputActivity">
+        tools:context=".OutputActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:gravity="center">
 
             <TableLayout
                 android:layout_width="wrap_content"
@@ -29,15 +29,16 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:labelFor="@+id/txtName"
+                        android:labelFor="@+id/lblName"
                         android:textSize="20sp"
                         android:text="Dog Name:" />
 
-                    <EditText
-                        android:id="@+id/txtName"
+                    <TextView
+                        android:id="@+id/lblName"
                         android:layout_height="wrap_content"
-                        android:layout_width="200dp"
-                        android:textSize="20sp" />
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp"
+                        android:text="@{dogData.name}" />
                 </TableRow>
 
                 <TableRow>
@@ -45,11 +46,16 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:labelFor="@+id/chkTrained"
+                        android:labelFor="@+id/lblTrained"
                         android:textSize="20sp"
                         android:text="Trained:" />
 
-                    <CheckBox android:id="@+id/chkTrained" />
+                    <TextView
+                        android:id="@+id/lblTrained"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp"
+                        android:text="@{dogData.trained ? @string/is_checked : @string/is_not_checked}" />
                 </TableRow>
 
                 <TableRow>
@@ -57,21 +63,25 @@
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:labelFor="@+id/chkVaccinate"
+                        android:labelFor="@+id/lblVaccinate"
                         android:textSize="20sp"
-                        android:text="Vaccination:" />
+                        android:text="Vaccinated: " />
 
-                    <CheckBox android:id="@+id/chkVaccinate" />
+                    <TextView
+                        android:id="@+id/lblVaccinate"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="20sp"
+                        android:text="@{dogData.vaccinated ? @string/is_checked : @string/is_not_checked}" />
                 </TableRow>
             </TableLayout>
 
             <Button
-                android:id="@+id/btnSubmit"
+                android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Submit" />
+                android:layout_margin="10dp"
+                android:text="Go back" />
         </LinearLayout>
-
     </LinearLayout>
 </layout>

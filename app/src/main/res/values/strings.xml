@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DogData1</string>
+    <string name="is_checked">Yes</string>
+    <string name="is_not_checked">No</string>
 </resources>
