@@ -28,7 +28,7 @@ class InputActivity : AppCompatActivity() {
         val dogName : String = binding.txtName.text.toString()
         val isTrained: Boolean =binding.chkTrained.isChecked
         val isVaccinated: Boolean = binding.chkVaccinate.isChecked
-        outState.putSerializable("DOG_DATA",DogData(dogName,isTrained,isVaccinated))
+        outState.putSerializable("data",DogData(dogName,isTrained,isVaccinated))
     }
 
     private fun submitData() {
@@ -40,7 +40,7 @@ class InputActivity : AppCompatActivity() {
             Toast.makeText(this,"Please fill in the textbox.", Toast.LENGTH_LONG).show()
         }else{
             val intent =Intent(this,OutputActivity::class.java).apply {
-                putExtra("DOG_DATA",DogData(dogName,isTrained,isVaccinated))
+                putExtra("data",DogData(dogName,isTrained,isVaccinated))
             }
 
             startActivity(intent)
